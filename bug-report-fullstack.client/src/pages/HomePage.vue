@@ -1,59 +1,86 @@
 <template>
   <div class="home container-fluid">
-    <div class="mt-5 mb-5 row">
-      <b class="text-lg">BUG LOG:</b>
+    <div class="mt-5 row text-center">
+      <div class="col-12">
+        <b class="text-lg">BUG LOG</b>
+      </div>
     </div>
-    <form action="" @submit.prevent="createNewBug()">
-      <div class="row m-1">
-        <div class="col-12 mt-4">
-          <h1 class="">
-            New Ticket:
-          </h1>
-        </div>
+    <div class="row mb-5
+      justify-content-center"
+    >
+      <div class="col-4 d-flex align-content-center justify-content-end mt-4 mb-4">
+        <button data-target="#model2" data-toggle="modal" type="button" class="btn btn-block btn-success btn-lg">
+          Create New Ticket
+        </button>
       </div>
-      <div class="row m-1">
-        <div class="col-6">
-          <input type="text"
-                 name=""
-                 id=""
-                 class="form-control radius-10 shadow"
-                 placeholder="Your Name Here"
-                 v-model="state.newBug.reportedBy"
+    </div>
+
+    <!-- Modal -->
+    <div class="row">
+      <div class="col-8 card offset-2">
+        <form action="" @submit.prevent="createNewBug(state.newBug)">
+          <div class="modal fade p-5 mt-3"
+               id="model2"
+               tabindex="-1"
+               role="dialog"
+               aria-labelledby="modelTitleId"
+               aria-hidden="true"
           >
-        </div>
-        <div class="col-6">
-          <input type="text"
-                 name=""
-                 id=""
-                 class="form-control radius-10 shadow"
-                 placeholder="Report Title"
-                 v-model="state.newBug.title"
-          >
-        </div>
-      </div>
-      <div class="row mt-3 justify-content-center p-3">
-        <div class="col-12">
-          <textarea name=""
-                    class="form-control radius-10 shadow"
-                    id=""
-                    cols="180"
-                    rows="3"
-                    placeholder="Description"
-                    v-model="state.newBug.description"
-          >
+            <div class="row m-1">
+              <div class="col-6">
+                <input type="text"
+                       name=""
+                       id=""
+                       class="form-control radius-10 shadow"
+                       placeholder="Your Name Here"
+                       v-model="state.newBug.reportedBy"
+                >
+              </div>
+              <div class="col-6">
+                <input type="text"
+                       name=""
+                       id=""
+                       class="form-control radius-10 shadow"
+                       placeholder="Report Title"
+                       v-model="state.newBug.title"
+                >
+              </div>
+            </div>
+            <div class="row mt-3 justify-content-center p-3">
+              <div class="col-12">
+                <textarea name=""
+                          class="form-control radius-10 shadow"
+                          id=""
+                          cols="180"
+                          rows="3"
+                          placeholder="Description"
+                          v-model="state.newBug.description"
+                >
             </textarea>
-        </div>
+              </div>
+            </div>
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-body">
+                  <div class="container-fluid row justify-content-evenly">
+                    <div class="col-6">
+                      <button type="button" class="btn btn-danger" data-dismiss="modal">
+                        Cancel
+                      </button>
+                    </div>
+                    <div class="col-6 d-flex justify-content-end">
+                      <button type="submit" class="btn btn-success" data-toggle="modal" data-target="#model2">
+                        Save
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
       </div>
-      <div class="row mb-5
-      justify-content-end"
-      >
-        <div class="col-2 d-flex align-content-center justify-content-end mt-4 mb-4">
-          <button type="submit" class="btn btn-block btn-success btn-lg">
-            Create Ticket
-          </button>
-        </div>
-      </div>
-    </form>
+    </div>
 
     <div class="row">
       <div class="col-4 ml-1">

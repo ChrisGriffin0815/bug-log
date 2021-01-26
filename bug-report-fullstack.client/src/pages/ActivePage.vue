@@ -1,19 +1,8 @@
 <template>
   <div class="activePage container-fluid">
     <!-- <transition-group name="fade"> -->
-    <div class="row">
-      <div class="col-6">
-        <button class="btn btn-link text-dark">
-          Previous
-        </button>
-      </div>
-      <div class="col-6">
-        <button class="btn btn-link text-dark">
-          Next
-        </button>
-      </div>
-      <div class="col-6"></div>
-    </div>
+
+    <div class="col-6"></div>
     <div class="row justify-content-between mt-1">
       <div class="col-5 ">
         <p>
@@ -27,8 +16,11 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-6">
+      <div v-if="activeBug.closed==false" class="col-6">
         <p>last updated: {{ activeBug.updatedAt }}</p>
+      </div>
+      <div v-else class="col-6">
+        <p>closed on: {{ activeBug.updatedAt }}</p>
       </div>
       <div class="col-6 d-flex justify-content-end">
         <p>ticket #: {{ activeBug.id }}</p>
@@ -109,7 +101,7 @@
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title">
-                {{ activeBug.title }}
+                {{ toLocaleDateString(activeBug.title) }}
               </h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
@@ -117,7 +109,13 @@
             </div>
             <div class="modal-body">
               <div class="container-fluid">
-                <textarea v-model="state.editBug.description" name="" id="" cols="57" rows="10"></textarea>
+                <textarea class="border-light"
+                          v-model="state.editBug.description"
+                          name=""
+                          id=""
+                          cols="57"
+                          rows="10"
+                ></textarea>
               </div>
             </div>
             <div class="modal-footer">
