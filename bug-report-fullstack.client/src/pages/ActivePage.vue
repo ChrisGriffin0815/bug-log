@@ -101,7 +101,7 @@
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title">
-                {{ toLocaleDateString(activeBug.title) }}
+                {{ activeBug.title }}
               </h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
@@ -148,7 +148,7 @@
         <h3>Message</h3>
       </div>
 
-      <div class="col-2">
+      <div class="col-2 py-1">
         <button :disabled="state.newComment.closed == true" type="button" class="btn btn-success" data-toggle="modal" data-target="#modelId">
           Add Comment
         </button>

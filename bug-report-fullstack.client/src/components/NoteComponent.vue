@@ -11,7 +11,7 @@
         Delete
       </button>
     </div>
-    <div v-else class="col-1 d-flex justify-content-end">
+    <div v-else class="col-1 d-flex justify-content-center">
       <button class="btn btn-link btn-sm text-danger">
         Closed
       </button>

@@ -19,7 +19,7 @@
     <div class="row">
       <div class="col-8 card offset-2">
         <form action="" @submit.prevent="createNewBug(state.newBug)">
-          <div class="modal fade p-5 mt-3"
+          <div class="modal fade bg-dark p-5 mt-3"
                id="model2"
                tabindex="-1"
                role="dialog"

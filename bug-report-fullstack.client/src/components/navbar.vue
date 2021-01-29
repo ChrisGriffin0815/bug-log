@@ -1,11 +1,13 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-dark bg- shadow-sm">
+  <nav class="navbar navbar-expand-lg navbar-dark bg- shadow">
     <div class="d-flex flex-column align-items-center">
-      <img
-        alt="logo"
-        src="../assets/img/griffin-logo.jpg"
-        height="45"
-      />
+      <router-link :to="{ name: 'Home' }" class="nav-link text-dark">
+        <img
+          alt="logo"
+          src="../assets/img/Griffin-Logo-Black.png"
+          height="55"
+        />
+      </router-link>
     </div>
     <button
       class="navbar-toggler bg-dark"
@@ -21,19 +23,17 @@
     <div class="row collapse navbar-collapse" id="navbarText">
       <div class="col-3">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <router-link :to="{ name: 'Home' }" class="nav-link text-dark">
-              Home
-            </router-link>
-          </li>
+          <!-- <li class="nav-item">
+            Home
+          </li> -->
         </ul>
       </div>
       <div class="col-6 d-flex justify-content-center">
-        <h1 class="mr-5">
-          Your Company Name Here
+        <h1 class="pr-5 mr-5">
+          Griffin Enterprises
         </h1>
       </div>
-      <div class="col_3 d-flex ml-5 pl-5">
+      <div class="col-3 d-flex justify-content-end">
         <span class="navbar-text text-dark">
           <button
             class="btn btn-outline-primary text-uppercase"
@@ -54,7 +54,7 @@
                 height="40"
                 class="rounded"
               />
-              <span class="mx-3">{{ user.name }}</span>
+              <!-- <span class="mx-3">{{ user.name }}</span> -->
             </div>
             <div
               class="dropdown-menu p-0 list-group w-100"
