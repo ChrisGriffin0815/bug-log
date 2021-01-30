@@ -17,17 +17,21 @@
       </h3>
     </div>
     <div class="col-2">
-      <h3>{{ bugProps.createdAt }}</h3>
+      <h3>{{ bugProps.createdAt.split('T').splice(0,1).join('') }}</h3>
     </div>
   </div>
 </template>
 
 <script>
+// import { DateTime } from 'luxon'
 export default {
   name: 'BugComponent',
   props: ['bugProps'],
-  setup() {
-    return {}
+  setup(bugProps) {
+    // const d = DateTime.toISO(bugProps.createdAt)
+    return {
+      // d
+    }
   },
   components: {}
 }

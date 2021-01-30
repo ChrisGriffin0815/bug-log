@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-dark bg- shadow">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow fixed-top">
     <div class="d-flex flex-column align-items-center">
       <router-link :to="{ name: 'Home' }" class="nav-link text-dark">
         <img
@@ -29,7 +29,7 @@
         </ul>
       </div>
       <div class="col-6 d-flex justify-content-center">
-        <h1 class="pr-5 mr-5">
+        <h1 class="pr-5 mr-5 text-light">
           Griffin Enterprises
         </h1>
       </div>
@@ -45,7 +45,7 @@
 
           <div class="dropdown" v-else>
             <div
-              class="dropdown-toggle"
+              class="dropdown-toggle text-light"
               @click="state.dropOpen = !state.dropOpen"
             >
               <img
@@ -57,17 +57,17 @@
               <!-- <span class="mx-3">{{ user.name }}</span> -->
             </div>
             <div
-              class="dropdown-menu p-0 list-group w-100"
+              class="dropdown-menu p-0 list-group w-100 dropdown-menu-right"
               :class="{ show: state.dropOpen }"
               @click="state.dropOpen = false"
             >
-              <router-link :to="{ name: 'Profile' }">
+              <!-- <router-link :to="{ name: 'Profile' }">
                 <div class="list-group-item list-group-item-action hoverable">
                   Profile
                 </div>
-              </router-link>
+              </router-link> -->
               <div
-                class="list-group-item list-group-item-action hoverable"
+                class="list-group-item list-group-item-action hoverable pr-5"
                 @click="logout"
               >
                 logout
